@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dojo Survey</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'dojo_survey.css' %}">
+
+    </head>
+    <body>
+        <div class="container">
+            <form action="/result" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="your name">Your Name:</label>
+                    <input type="text" class="form-control" name='name' id="your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="dojo location">Dojo Location:</label>
+                    <select class="form-control" id="dojo  location" name='location'>
+                        <option>San Jose</option>
+                        <option>Seattle</option>
+                        <option>Chicago</option>
+                    </select>
+                </div>
+
+                <div class="form-group">Favorite Language:  
+                    <input class="form-group-input" type="radio" name="language" id="inlineRadio1"  value="Python">
+                    <label class="form-group-label" for="inlineRadio1">Python</label>
+                    <input class="form-group-input" type="radio" name="language" id="inlineRadio1" value="Java">
+                    <label class="form-group-label" for="inlineRadio1">Java</label>
+                    <input class="form-group-input" type="radio" name="language" id="inlineRadio1" value="Mern">
+                    <label class="form-group-label" for="inlineRadio1">Mern</label>
+                </div>
+                
+                <div class="form-group">What languages do you want to learn: 
+                    <input class="form-group-input" type="checkbox" value="Mean" id="defaultCheck1" name='learn'>
+                    <label class="form-group-label" for="defaultCheck1">
+                    Mean
+                    </label>
+                    <input class="form-group-input" type="checkbox" value="C#" id="defaultCheck2" name='learn'>
+                    <label class="form-group-label" for="defaultCheck2">
+                    C#
+                    </label>
+                    <input class="form-group-input" type="checkbox" value="Rails" id="defaultCheck3" name='learn'>
+                    <label class="form-group-label" for="defaultCheck">
+                    Rails
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <p>Comment (optional):</p>
+                    <textarea name="comment"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="Submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

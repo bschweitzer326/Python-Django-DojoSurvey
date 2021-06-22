@@ -1,0 +1,18 @@
+/* *{
+    
+} */
+
+.container {
+    max-width: 550px;
+    width: 90%;
+    margin: 40px auto;
+    background-color: #d4c5f2;
+    padding: 40px;
+    border-radius: 4px;
+    color: black;
+}
+
+    textarea {
+        width: 470px;
+        height: 150px;
+    }
